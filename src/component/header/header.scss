@@ -1,0 +1,131 @@
+@use "../../scss/" as *;
+
+.header {
+    height: 10vh;
+    position: fixed;
+    z-index: 3;
+    border-bottom: #5e5e5e 0.1px solid;
+    width: 100%;
+
+    &__wrap {
+        @include flex(center, space-between);
+        height: 100%;
+        padding: 0 2rem;
+    }
+
+    .menu {
+        overflow: hidden;
+        li {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-weight: 700;
+        }
+    }
+}
+
+// css search box
+
+.src-box {
+    font-size: 20px;
+    border: solid 0.1em #fff;
+    display: inline-block;
+    position: relative;
+    border-radius: 2.5em;
+}
+
+.src-box input[type="text"] {
+    font-family: inherit;
+    font-weight: bold;
+    color: #fff;
+    padding-left: 9px;
+
+    width: 2.5em;
+    height: 2.5em;
+    background-color: transparent;
+    border: none;
+    box-sizing: border-box;
+    border-radius: 2.5em;
+    transition: width 800ms cubic-bezier(0.68, -0.55, 0.27, 1.55) 150ms;
+}
+
+.src-box input[type="text"]:focus {
+    outline: none;
+}
+
+.src-box input[type="text"]:focus,
+.src-box input[type="text"]:not(:placeholder-shown) {
+    width: 18em;
+    transition: width 800ms cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+.src-box input[type="text"]:focus + button[type="reset"],
+.src-box input[type="text"]:not(:placeholder-shown) + button[type="reset"] {
+    transform: rotate(-45deg) translateY(0);
+    transition: transform 150ms ease-out 800ms;
+}
+.src-box input[type="text"]:focus + button[type="reset"]::after,
+.src-box
+    input[type="text"]:not(:placeholder-shown)
+    + button[type="reset"]::after {
+    opacity: 1;
+    transition: top 150ms ease-out 950ms, right 150ms ease-out 950ms,
+        opacity 150ms ease 950ms;
+}
+.src-box button[type="reset"] {
+    background-color: transparent;
+    width: 1.4em;
+    height: 1.4em;
+    border: 0;
+    padding: 0;
+    outline: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0.55em;
+    right: 0.55em;
+    transform: rotate(-45deg) translateY(2.2em);
+    transition: transform 150ms ease-out 150ms;
+}
+
+.src-box button[type="reset"]::before,
+.src-box button[type="reset"]::after {
+    content: "";
+    background-color: #fff;
+    width: 0.15em;
+    height: 1.4em;
+    border-radius: 10px;
+    position: absolute;
+}
+
+.src-box button[type="reset"]::after {
+    transform: rotate(90deg);
+    opacity: 0;
+    transition: transform 150ms ease-out, opacity 150ms ease-out;
+}
+
+// css search box dropdown on input
+.query__results {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    background-color: rgb(136, 125, 125);
+    // color: black;
+
+    width: 18em;
+    margin-top: 0.3rem;
+    // font-weight: 500;
+    font-size: 14px;
+    img {
+        width: 50px;
+        height: auto;
+    }
+    a {
+        display: flex;
+        margin: 5px 10px;
+        font-size: 10px;
+    }
+}

@@ -1,0 +1,82 @@
+.last-added {
+    color: red;
+    margin: 3rem 3rem;
+    font-size: 20px;
+    font-weight: 700;
+
+    text-align: center;
+    text-transform: uppercase;
+
+    justify-items: center;
+}
+.last-added::after {
+    border-top: 1px solid white;
+    content: "";
+    display: flex;
+    width: 13%;
+    justify-content: center;
+    align-items: center;
+
+    margin: auto;
+}
+.category {
+    justify-content: center;
+    text-align: center;
+    h2 {
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+    }
+    h2::after {
+        border-top: 1px solid white;
+        content: "";
+        display: flex;
+        width: 13%;
+        justify-content: center;
+        align-items: center;
+
+        margin: auto;
+    }
+    .category_collection {
+        display: flex;
+        width: 50%;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+
+        row-gap: 15px;
+        column-gap: 20px;
+        flex-wrap: wrap;
+
+        button {
+            height: 3rem;
+            width: 9rem;
+            text-align: center;
+            background-color: darkcyan;
+            color: aliceblue;
+            border-radius: 10px;
+            border: none;
+            cursor: pointer;
+        }
+    }
+}
+.trending_movies {
+    color: red;
+    margin: 3rem 3rem;
+    font-size: 20px;
+    font-weight: 700;
+
+    text-align: center;
+    text-transform: uppercase;
+
+    justify-items: center;
+}
+.trending_movies::after {
+    border-top: 1px solid white;
+    content: "";
+    display: flex;
+    width: 13%;
+    justify-content: center;
+    align-items: center;
+
+    margin: auto;
+}

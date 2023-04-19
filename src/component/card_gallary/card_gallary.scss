@@ -1,0 +1,27 @@
+.container {
+    padding: 2rem;
+}
+.category__gallary {
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    // align-items: center;
+    justify-content: center;
+    gap: 10px 20px;
+    &__item {
+        // margin: auto;
+        // float: left;
+        img {
+            border-radius: 2rem;
+            height: 300px;
+            width: auto;
+        }
+        h1 {
+            font-size: 12px;
+        }
+    }
+}
+.seemore {
+    text-align: right;
+}

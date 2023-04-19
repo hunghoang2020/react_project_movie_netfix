@@ -1,0 +1,26 @@
+@use "../../scss/" as *;
+
+.primari-button {
+    width: 10rem;
+    height: 2.8rem;
+    border-radius: 7px;
+
+    color: $txt-color;
+    border: none;
+    background-color: rgba(255, 99, 71, 0.3);
+    cursor: pointer;
+}
+.btn {
+    margin-right: 1rem;
+}
+.outline-button {
+    width: 10rem;
+    height: 2.8rem;
+    border-radius: 7px;
+    border: 1px solid white;
+
+    color: $txt-color;
+
+    background-color: transparent;
+    cursor: pointer;
+}

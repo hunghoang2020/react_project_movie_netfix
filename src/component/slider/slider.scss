@@ -1,0 +1,32 @@
+@use "../../scss/" as *;
+
+.slider__item {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: rgba(0, 0, 0, 0.5);
+
+    .overlay {
+        position: fixed; /* Sit on top of the page content */
+        width: 100%; /* Full width (cover the whole page) */
+        height: 100%; /* Full height (cover the whole page) */
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    &__container {
+        z-index: 1;
+        position: relative;
+        padding: 8rem 2rem 2rem;
+        width: 60%;
+        height: 50rem;
+
+        .title {
+            font-size: 40px;
+            margin: 2rem 0 2rem 0;
+        }
+        .description {
+            font-size: 1.5rem;
+            font-weight: 300;
+        }
+    }
+}
