@@ -6,6 +6,7 @@
     z-index: 3;
     border-bottom: #5e5e5e 0.1px solid;
     width: 100%;
+    background-color: #6b6969;
 
     &__wrap {
         @include flex(center, space-between);
@@ -23,6 +24,18 @@
             padding: 14px 16px;
             text-decoration: none;
             font-weight: 700;
+        }
+        a {
+            // -webkit-transition: text-decoration 10s;
+            transition: text-decoration 2s;
+            // display: block;
+            // color: blue;
+            // text-decoration: underline 1px red;
+            // border: 0 0 0 1px;
+        }
+        a:hover {
+            text-decoration: underline 2px blue;
+            font-weight: bold;
         }
     }
 }
