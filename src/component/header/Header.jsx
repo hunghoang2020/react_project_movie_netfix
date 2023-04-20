@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect, useRef } from "react"
 import logo from "../../assets/logo.png"
 import { Link } from "react-router-dom"
 import "./header.scss"
@@ -7,6 +7,24 @@ import apiConfig from "../../api/apiConfig"
 const Header = () => {
     const [query, setQuery] = useState("")
     const [queryResult, setQueryResult] = useState([])
+    const blur = useRef(null)
+    useEffect(() => {
+        const blurHeader = () => {
+            if (
+                document.body.scrollTop > 100 ||
+                document.documentElement.scrollTop > 100
+            ) {
+                blur.current.classList.add("blur")
+            } else {
+                blur.current.classList.remove("blur")
+            }
+        }
+        window.addEventListener("scroll", blurHeader)
+
+        return () => {
+            window.removeEventListener("scroll", blurHeader)
+        }
+    }, [])
 
     const search = (data) => {
         const query = async () => {
@@ -25,7 +43,7 @@ const Header = () => {
     }
 
     return (
-        <div className='header'>
+        <div className='header' ref={blur}>
             <div className='header__wrap container'>
                 <div className='logo'>
                     <img src={logo} alt='' />
@@ -81,7 +99,6 @@ const Header = () => {
                             </Link>
                         ))}
                     </div>
-                    <button>sing in</button>
                 </div>
             </div>
         </div>
